@@ -21,6 +21,7 @@ body {
   padding: 5px 0;
   font-size: 28px;
   font-weight: bold;
+  user-select: none;
 }
 .game .title span {
   color: #fa0;
@@ -40,6 +41,7 @@ body {
   cursor: pointer;
   transition: .3s;
   text-transform: uppercase;
+  user-select: none;
 }
 .square:hover {
   background-color: rgb(236, 7, 61);
@@ -52,6 +54,7 @@ body {
   border-radius: 5px;
   width: 250px;
   text-align: center;
+  user-select: none;
 }
 .options {
   display: flex;

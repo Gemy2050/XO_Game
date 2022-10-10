@@ -5,6 +5,7 @@ let start = document.querySelector(".controls .start");
 let controls = document.querySelector('.controls');
 
 let turn = "o";
+let count = 0;
 
   options.forEach((el) => {
     el.addEventListener("click", (e) => {
@@ -24,7 +25,7 @@ let turn = "o";
 
 
 function game(sq) {
-
+  count++;
   if(turn == "o" && sq.textContent == '') {
     title.textContent = "X";
     sq.textContent = "O";
@@ -85,6 +86,11 @@ function winner() {
     squares[6].innerHTML != ""
   ) {
     end(2, 4, 6);
+  } else {
+      if (count == 9) {
+        title.innerHTML = 'No Winner';
+        setTimeout(()=> location.reload(), 2500)
+      };
   }
 
 }
@@ -97,10 +103,10 @@ function end(num1, num2, num3) {
 
   setInterval(()=> {
     title.innerHTML += '.';
-  }, 500)
-  setTimeout(()=> location.reload(), 1900)
+  }, 800)
+  setTimeout(()=> location.reload(), 2500)
 
-  squares.forEach(sq => {
+  squares.forEach(sq => { 
     sq.style.pointerEvents = 'none';
   })
 
