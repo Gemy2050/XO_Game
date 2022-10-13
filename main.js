@@ -20,12 +20,12 @@ let count = 0;
   start.onclick = function() {
     squares.forEach((s) => s.style.display = 'block');
     controls.style.display = 'none'
-    
   }
 
 
 function game(sq) {
-  count++;
+    if (sq.textContent == "") count++;
+
   if(turn == "o" && sq.textContent == '') {
     title.textContent = "X";
     sq.textContent = "O";
@@ -35,6 +35,7 @@ function game(sq) {
     sq.textContent = "X";
     turn = 'o';
   }
+
   winner();
 }
 function winner() {
